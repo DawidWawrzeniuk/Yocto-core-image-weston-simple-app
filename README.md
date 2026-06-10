@@ -165,13 +165,6 @@ core-image-weston-raspberrypi5.rootfs.wic.bz2
 
 ---
 
-# 11. Extract the Image
-
-```bash
-bunzip2 core-image-minimal-raspberrypi5.rootfs.wic.bz2
-```
-
----
 
 # 12. Flash Image to SD Card
 
