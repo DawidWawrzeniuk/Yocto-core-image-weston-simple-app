@@ -108,6 +108,12 @@ BBLAYERS ?= " \
 
 ---
 
+
+
+
+
+
+---
 # 6. Build the Image
 
 Build the minimal Linux image:
@@ -155,7 +161,7 @@ lsblk
 Flash the image:
 
 ```bash
-sudo dd if=core-image-minimal-raspberrypi5.rootfs.wic of=/dev/sdX bs=4M status=progress conv=fsync
+bzcat core-image-minimal-raspberrypi5.rootfs.wic.bz2 | sudo dd of=/dev/sdX bs=4M status=progress conv=fsync
 ```
 
 Replace:
