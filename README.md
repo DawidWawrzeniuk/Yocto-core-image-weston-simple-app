@@ -48,11 +48,21 @@ Download the Raspberry Pi BSP layer:
 ```bash
 git clone -b scarthgap https://github.com/agherzan/meta-raspberrypi.git
 ```
+# 2. Clone meta-openembedded layer
+
+Download the meta-openembedded layer:
+
+```bash
+git clone -b scarthgap https://github.com/agherzan/meta-raspberrypi.git
+```
+
 # 3. Clone this repository to new layer
 
 ```bash
+cd poky-rpi
 git clone https://github.com/DawidWawrzeniuk/Yocto-core-image-weston-simple-app.git
 ```
+And paste local.conf to ~/poky-rpi/build/conf
 ---
 
 # 4. Clone the meta-qt6 meta data
@@ -80,25 +90,8 @@ This command creates the `build/` directory automatically.
 
 ---
 
-# 6. Configure Raspberry Pi 5
 
-Edit the configuration file:
-
-```bash
-nano conf/local.conf
-```
-
-Set the target machine:
-
-```conf
-MACHINE = "raspberrypi5"
-INIT_MANAGER = "systemd"
-LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
-```
-
----
-
-# 7. Add meta-raspberrypi Layer
+# 6. Add meta-raspberrypi Layer
 
 Edit:
 
@@ -126,13 +119,22 @@ BBLAYERS ?= " \
 ---
 
 
-# 8. Add meta-qt6 to layers
+# 7. Add meta-qt6 to layers
 ```bash
 cd build
 bitbake-layers add-layer ../meta-qt6
 ```
 
 ---
+
+# 8. Add meta-openembedded to layers
+```bash
+cd build
+bitbake-layers add-layer ../meta-openembedded
+```
+
+---
+
 
 # 9. Check available packages in meta-qt6 layer
 ```bash
@@ -208,3 +210,5 @@ with your SD card device.
 
 * Yocto Project: https://www.yoctoproject.org/
 * meta-raspberrypi: https://github.com/agherzan/meta-raspberrypi
+* https://code.qt.io/cgit/yocto/meta-qt6.git/
+* 
