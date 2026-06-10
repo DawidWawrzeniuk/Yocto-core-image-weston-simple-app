@@ -50,7 +50,21 @@ git clone -b scarthgap https://github.com/agherzan/meta-raspberrypi.git
 ```
 # 3. Clone this repository to new layer
 
+```bash
+git clone https://github.com/DawidWawrzeniuk/Yocto-core-image-weston-simple-app.git
+```
+---
 
+# 5. Clone the meta-qt6 meta data
+
+```bash
+git clone https://code.qt.io/yocto/meta-qt6.git
+```
+And change the branch to scarthgap
+```bash
+cd meta-qt6
+git checkout lts-6.8
+```
 ---
 
 # 3. Initialize Build Environment
