@@ -134,10 +134,16 @@ bitbake-layers add-layer ../meta-qt6
 
 ---
 
-
+# 9. Check available packages in meta-qt6 layer
+```bash
+cd build
+oe-pkgdata-util list-pkgs | grep qt
+```
 
 ---
-# 9. Build the Image
+
+---
+# 10. Build the Image
 
 Build the minimal Linux image:
 
@@ -149,7 +155,7 @@ The build process may take a long time depending on your hardware.
 
 ---
 
-# 10. Generated Image Location
+# 11. Generated Image Location
 
 After a successful build, the image will be available in:
 
