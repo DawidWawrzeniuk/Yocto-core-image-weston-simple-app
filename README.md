@@ -55,19 +55,20 @@ git clone https://github.com/DawidWawrzeniuk/Yocto-core-image-weston-simple-app.
 ```
 ---
 
-# 5. Clone the meta-qt6 meta data
+# 4. Clone the meta-qt6 meta data
 
 ```bash
+cd poky-rpi
 git clone https://code.qt.io/yocto/meta-qt6.git
 ```
-And change the branch to scarthgap
+And change the branch to 6.8 version
 ```bash
 cd meta-qt6
 git checkout lts-6.8
 ```
 ---
 
-# 3. Initialize Build Environment
+# 5. Initialize Build Environment
 
 Run the Yocto environment setup script:
 
@@ -79,7 +80,7 @@ This command creates the `build/` directory automatically.
 
 ---
 
-# 4. Configure Raspberry Pi 5
+# 6. Configure Raspberry Pi 5
 
 Edit the configuration file:
 
@@ -97,7 +98,7 @@ LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
 
 ---
 
-# 5. Add meta-raspberrypi Layer
+# 7. Add meta-raspberrypi Layer
 
 Edit:
 
@@ -125,12 +126,18 @@ BBLAYERS ?= " \
 ---
 
 
+# 8. Add meta-qt6 to layers
+```bash
+cd build
+bitbake-layers add-layer ../meta-qt6
+```
 
+---
 
 
 
 ---
-# 6. Build the Image
+# 9. Build the Image
 
 Build the minimal Linux image:
 
@@ -142,7 +149,7 @@ The build process may take a long time depending on your hardware.
 
 ---
 
-# 7. Generated Image Location
+# 10. Generated Image Location
 
 After a successful build, the image will be available in:
 
@@ -158,7 +165,7 @@ core-image-weston-raspberrypi5.rootfs.wic.bz2
 
 ---
 
-# 8. Extract the Image
+# 11. Extract the Image
 
 ```bash
 bunzip2 core-image-minimal-raspberrypi5.rootfs.wic.bz2
@@ -166,7 +173,7 @@ bunzip2 core-image-minimal-raspberrypi5.rootfs.wic.bz2
 
 ---
 
-# 9. Flash Image to SD Card
+# 12. Flash Image to SD Card
 
 Check available storage devices:
 
@@ -190,7 +197,7 @@ with your SD card device.
 
 ---
 
-# 10. Boot Raspberry Pi 5
+# 13. Boot Raspberry Pi 5
 
 1. Insert the SD card into Raspberry Pi 5
 2. Connect power
