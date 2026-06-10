@@ -48,6 +48,8 @@ Download the Raspberry Pi BSP layer:
 ```bash
 git clone -b scarthgap https://github.com/agherzan/meta-raspberrypi.git
 ```
+# 3. Clone this repository to new layer
+
 
 ---
 
